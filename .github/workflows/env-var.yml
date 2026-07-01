@@ -4,9 +4,9 @@ env:
   APP_ENV: "dev" 
 jobs:
   env-var:
-  runs-on: ubuntu-latest
-  steps:
-    - name: testing env-var
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing env-var
       run:
         echo "Testing.. current output from $APP_ENV"
   
