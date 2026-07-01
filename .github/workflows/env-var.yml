@@ -1,12 +1,16 @@
-name: demo environment variable
-on: workflow_dispatch
+name: Demo Environment Variable
+
+on:
+  workflow_dispatch
+
 env:
-  APP_ENV: "dev" 
+  APP_ENV: "dev"
+
 jobs:
   env-var:
     runs-on: ubuntu-latest
+
     steps:
-      - name: testing env-var
-      run:
-        echo "Testing.. current output from $APP_ENV"
-  
+      - name: Testing env-var
+        run: |
+          echo "Testing... Current environment is $APP_ENV"
