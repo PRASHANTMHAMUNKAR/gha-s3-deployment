@@ -1,7 +1,7 @@
 name: github action and S3 Deployment
 on: push
 jobs:
-    github-s3-deploy:
+  github-s3-deploy:
     runs-on: ubuntu-latest
         steps:
             - name: checkout code from repo
