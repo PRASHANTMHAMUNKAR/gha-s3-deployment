@@ -1,8 +1,9 @@
 name: demo environment variable
 on: workflow_dispatch
-APP_ENV: dev 
+env:
+  APP_ENV: "dev" 
 jobs:
-  env-var
+  env-var:
   runs-on: ubuntu-latest
   steps:
     - name: testing env-var
