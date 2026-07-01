@@ -11,5 +11,10 @@ jobs:
          uses: aws-actions/configure-aws-credentials@v4
          with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws-secret-key: ${{ secrets.AWS_SECRET_KEY }}
+            aws-secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: us-east-1
+       - name: static code to s3
+         run: |
+            aws s3 sync ./ s3://pacific-bucket-383175541498/ \
+            --exclude "*" \
+            --include "index.html" 
