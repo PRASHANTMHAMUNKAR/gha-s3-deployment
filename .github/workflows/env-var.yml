@@ -9,10 +9,9 @@ env:
 jobs:
   env-var:
   env:
-    APP_ENV: "test"
+  APP_ENV: "dev" 
     runs-on: ubuntu-latest
-
     steps:
       - name: Testing env-var
-        run: |
-          echo "Testing... Current environment is $APP_ENV"
+        run: echo "Testing... Current environment is $APP_ENV"
+          
