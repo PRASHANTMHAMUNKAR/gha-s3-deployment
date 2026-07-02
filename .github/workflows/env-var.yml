@@ -14,6 +14,6 @@ jobs:
     steps:
       - name: Testing env-var
         env:
-          APP_ENV: "dev"
+          APP_ENV: "prod"
         run: echo "Testing... Current environment is $APP_ENV"
           
