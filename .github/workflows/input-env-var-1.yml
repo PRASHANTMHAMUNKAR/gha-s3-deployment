@@ -1,0 +1,47 @@
+name: input env var 1
+
+on:
+  workflow_dispatch:
+    inputs: 
+      environment:
+        description: "Select deployment Environment"
+        required: true
+        type: choice
+        default: dev
+        options:
+          - dev
+          - test
+          - prod
+
+      aws_region:
+        description: "Select the AWS region"
+        required: true
+        type: choice 
+        default: ap-south-1
+        options:
+          - ap-south-1
+          - ap-southeast-1
+
+      deploy_type:
+        description: "Deployment Type"
+        required: true
+        type: choice
+        default: full
+        options: 
+          - full
+          - increamental
+
+      version:
+        description: "Application Version (Example: v1.2.0)"
+        required: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: show deployment details
+        run: |
+          echo "Environment : ${{ inputs.environment }} "
+          echo "AWS Region  : ${{ inputs.aws_region }} "       
+          echo "Deploy Type : ${{ inputs.deploy_type }} "
+          echo "Version     : ${{ inputs.version }} "
