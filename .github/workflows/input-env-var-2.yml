@@ -1,0 +1,30 @@
+name: testing input env part 2
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "select the environment"
+        required: true
+        type: choice
+        default: dev
+        options:
+          - dev
+          - test
+          - prod
+
+      version:
+        description: "Enter the application version"
+        required: true
+
+jobs:
+  input-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print inputs
+        run: |
+          echo " Environment   :  ${{ inputs.environment }}"
+          echo " Version       :  ${{ inputs.version }}  " 
+      - name: Simulate Deployement 
+        run: |  
+          echo "Deploying Version ${{ inputs.version }}  to ${{ inputs.environment }}" 
