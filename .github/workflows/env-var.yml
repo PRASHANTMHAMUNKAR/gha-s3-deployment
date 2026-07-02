@@ -8,6 +8,8 @@ env:
 
 jobs:
   env-var:
+  env:
+    APP_ENV: "test"
     runs-on: ubuntu-latest
 
     steps:
