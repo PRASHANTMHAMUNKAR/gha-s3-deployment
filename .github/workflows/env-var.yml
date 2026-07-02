@@ -13,5 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testing env-var
+        env:
+          APP_ENV: "dev"
         run: echo "Testing... Current environment is $APP_ENV"
           
