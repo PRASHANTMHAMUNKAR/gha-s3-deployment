@@ -9,7 +9,7 @@ env:
 jobs:
   env-var:
    env:
-    APP_ENV: "dev" 
+    APP_ENV: "test" 
    runs-on: ubuntu-latest
    steps:
      - name: Testing env-var
