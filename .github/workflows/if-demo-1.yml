@@ -8,7 +8,7 @@ jobs:
     steps:
      - name: Run if branch main
        if: github.ref == 'refs/heads/main'
-       run: "Echo Running for main branch"
+       run: echo "Running for main branch"
 
      - name: Run if branch main - 2
        if: github.ref_name == 'main'
