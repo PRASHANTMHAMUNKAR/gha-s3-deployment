@@ -6,6 +6,6 @@ jobs:
 
     steps:
       - name: Running for or condition pacific and prashant
-        if: github.actor == 'prashant' || github.actor == 'pacific'
+        if: github.actor == 'prashantmhamunkar' || github.actor == 'pacific'
         run: 
           echo "this workflow is either run by pacific or prashant"
