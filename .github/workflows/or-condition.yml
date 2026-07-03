@@ -1,0 +1,11 @@
+name: Demo for or conditon
+on: push
+jobs:
+  demo-for-or-conditon:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Running for or condition pacific and prashant
+        if: github.actor == 'prashant' || github.actor == 'pacific'
+        run: 
+          echo "this workflow is either run by pacific or prashant"
