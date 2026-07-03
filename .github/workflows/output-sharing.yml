@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: step one
         id: step1
-        run: echo "version=0.0.1" >> $GITHUB_OUTPUT
+        run: echo "version=0.0.1" >> $GITHUB_OUTPUT  # $GITHUB_OUTPUT GitHub stores it as a step output, making it available to later steps:
 
       - name: step two
         run: echo " This version is ${{ steps.step1.outputs.version }} "
