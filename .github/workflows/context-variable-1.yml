@@ -1,0 +1,19 @@
+name: Conetxt variable Demo
+on:
+  push:
+jobs:
+  context-var-Demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print some context variable
+        run: |
+          echo "print the name of repository ${{ github.repository }}"
+          echo "Wokflow is trigred by ${{ github.actor }}"
+          echo "The branch is ${{ github.ref_name }}"
+
+      - name: print all the variable 
+        run:  echo " ${{ toJson(github) }}"
+
+      - name: print the environemt variable
+        run: printenv 
