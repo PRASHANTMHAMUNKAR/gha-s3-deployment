@@ -1,0 +1,14 @@
+name: if condition job level 
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: testing app
+        run: echo " applciation is testing"
