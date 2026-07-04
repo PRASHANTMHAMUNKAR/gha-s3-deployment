@@ -1,0 +1,23 @@
+name: pull_request-review-push
+on:
+  push:
+    branches: 
+      -main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Build steps
+        run: echo "Building the application"
+
+  Deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref_name == 'main'
+    steps:
+       - name: Deploy the app
+         run: echo "Deploying the appliocation"
