@@ -1,0 +1,14 @@
+name: pull_request-review-push
+on:
+  pull_request:
+    - opened
+    - synchronize
+
+jobs: 
+  build:
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Build steps:
+      run: "Building the application"
+      
